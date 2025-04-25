@@ -363,7 +363,7 @@ console.log(c1,c2)
 //Variable hoisting
 console.log(name)
 var name="Rajdip"
-let name = "rajdip"; // Reference error (let,const are belong from TDZ)
+//let name = "rajdip"; // Reference error (let,const are belong from TDZ)
 
 //function hoisting
 sayHello();
@@ -382,8 +382,202 @@ performTask()
 
 
 
+//Global Scope
+let name3 = "Rajdip"
+console.log(name3)
+
+
+for(let i=0;i<5;i++)
+{
+  console.log(i) //local
+}
+
+//console.log(i)
+
+
+function showMsg()
+{
+  let msg = "Raju Hiii"
+  console.log(msg)
+}
+
+//showMsg()
+//console.log(msg)
+
+
+//IIFE
+
+
+
+// closure
+function outer()
+{
+  let count =0;
+  return function inner()
+  {
+    count++;
+    console.log(`The counter is: ${count}`)
+  }
+}
+
+const increment = outer()
+increment();
+increment();
+
+
+//closure Example
+function xyz()
+{
+  let count1=0;
+  return function efg(){
+    count1++;
+    console.log(`The count is: ${count1}`)
+  }
+}
+
+const Chandrima = xyz()
+Chandrima()
+Chandrima()
+
+
+//Object methods
+
+const person = {
+  name: "Rajdip",
+  age: 26,
+  tell: function sss()
+  {
+    console.log(`"Hi I love mamon"`)
+  }
+}
+
+console.log(person["tell"]()) // to call function in object use obj reference
+
+
+const Mamon = {
+  name1 : "Chandrima",
+  age: 25,
+  name4: "Raj",
+  fact: function chan()
+  {
+    console.log(`Hi, I am ${Mamon.name1} and my age is ${Mamon.age} and I love ${Mamon.name4}`)
+  } 
+}
+
+console.log(Mamon["fact"]())
     
     
+// Check property in obj
+
+const Person1={
+  name5: "Rajdip",
+  age: 26,
+  hobbies: ["Playing", "Singing"],
+}
+
+console.log("age" in Person1)
+console.log("name5" in Person1)
+console.log("address" in Person1)
+
+
+console.log(Person1.name5 !== undefined) //t
+console.log(Person1.city !== undefined) //f
+
+
+//Object.create()
+
+const Person2 = {
+  name: "",
+  age: 0,
+}
+
+var Rr = Object.create(Person2);
+Rr.name="Rajdip Sanayl + Chandrima"
+Rr.age=26
+
+
+
+const developer = {
+  name: "Rajdip",
+  age: 26,
+  address: {
+    City: "Chandannagar",
+    State: "WB"
+  },
+  fact1: () => {
+    console.log(`My name is ${developer.name}, age is ${developer.age}`)
+  }
+}
+
+console.log(developer["fact1"]())
+
+
+
+// shallow copy 
+
+const details = {
+  name : "Pritam",
+  age : 25,
+  address : ["Shymnagar","Nadia","WB"]
+}
+
+let obj_copy = details; // reference of details is copied to obj_copy
+
+obj_copy.address=["Chandannagar","Hooghly"]
+obj_copy.name="Rajdip"
+obj_copy.age=26
+
+console.log(obj_copy)
+
+
+//Deep copy
+
+const details1 = {
+  name : "Pritam",
+  age : 25,
+  address : ["Shymnagar","Nadia","WB"]
+}
+
+const details2 = {}
+
+for(prop in details1)
+{
+  details2[prop] = details1[prop]
+}
+
+details2.name = "Rajdip"
+details2.age=26
+
+console.log(details2)
+console.log(details1)
+
+
+const f ={
+  a: 1, b: 1000
+}
+
+let s = Object.keys(f); // returns the array of object's key names
+console.log(s)
+
+const f1 ={
+  a: 1, b: 1000
+}
+
+let ss = Object.values(f1); // returns the array of object's values
+console.log(ss)
+
+
+const yz = {
+
+  name: "Rajdip Sanyal",
+  age: 26
+}
+
+let t = Object.entries(yz)
+console.log(yz)
+
+
+
 
 
     
