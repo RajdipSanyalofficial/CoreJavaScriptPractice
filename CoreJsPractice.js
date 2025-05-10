@@ -494,7 +494,7 @@ const Person2 = {
 var Rr = Object.create(Person2);
 Rr.name="Rajdip Sanayl + Chandrima"
 Rr.age=26
-
+console.log(Rr);
 
 
 const developer = {
@@ -574,7 +574,53 @@ const yz = {
 }
 
 let t = Object.entries(yz)
-console.log(yz)
+console.log(yz) //returns the array of key value pairs in obj
+
+
+//Array like obj
+
+sum(22,44,66)
+function sum () {
+console.log(arguments);
+console.log(arguments.length);
+console.log(arguments[0]);
+
+}
+
+// convert array obj to array -> Array.from()
+let dd = "123"
+
+let dd1 = Array.from(dd)
+console.log(dd1)
+
+// Pure 
+
+function abcdef(x,z)
+{
+  return x+z;
+}
+
+console.log(abcdef(3,5))
+
+//Impure 
+var count2=0;
+
+function wxy(value)
+{
+  count2+=value;
+  return count2;
+}
+
+console.log(wxy(50)); //50
+
+console.log(wxy(50)); //100
+
+
+
+
+
+
+
 
 
 
